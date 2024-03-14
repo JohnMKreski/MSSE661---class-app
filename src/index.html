@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+
+        <link rel="stylesheet" href="css/style.css" />
+
+        <title>JMK Class App</title>
+    </head>
+
+    <body>
+        <header>
+            <div class="headCtn">
+                <h1 id="helloWorldText"></h1>
+            </div>
+            
+        </header>
+
+        <main>
+            <div class="titleCtn">
+                <h3>
+                    <button onclick = "reverseBackgroundColor()"> Previous </button>
+                    ::BACKGROUND COLOR::
+                    <a href="#" onclick = "backgroundColor()"> Next</a>
+                </h3>
+            </div>
+
+            <div class="page">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Duis pharetra turpis vitae turpis sagittis, at cursus urna elementum. 
+                    Integer fermentum sem nec nunc ultricies hendrerit a vitae purus. 
+                    Fusce a dui ac sapien vulputate viverra. 
+                    Nullam aliquam risus eget gravida cursus. Ut fermentum blandit rutrum. 
+                    Nullam id ullamcorper velit, eu dapibus nibh. 
+                    Sed vulputate varius augue sed euismod. 
+                    Sed quis finibus nisi, ac maximus nisi. 
+                    Quisque lobortis dui nec odio efficitur, vel consequat odio euismod. 
+                    Nam eget ipsum nulla. Vestibulum venenatis mauris eget leo mattis consequat fermentum vulputate lectus.
+                </p>
+                <br>
+                <p>
+                    Nam sit amet iaculis justo. Etiam sit amet nunc sapien. 
+                    Sed auctor commodo tortor, non mollis lacus semper sit amet. 
+                    Maecenas tristique nunc vel odio porttitor rhoncus. 
+                    Donec sit amet turpis sit amet leo pharetra semper. 
+                    Aenean a convallis ipsum. Cras odio orci, convallis eu risus sed, 
+                    ullamcorper mollis mi.
+                </p>
+                <br>
+                <p>
+                    Pellentesque ligula ante, lobortis ut suscipit bibendum, auctor eu turpis. 
+                    Quisque urna diam, maximus sit amet auctor a, volutpat eget elit. 
+                    Sed finibus, tortor eu dictum volutpat, neque urna ullamcorper neque, vel venenatis mi lacus eu sapien. 
+                    Donec bibendum hendrerit sagittis. 
+                    Aenean arcu turpis, hendrerit non mattis non, facilisis elementum diam. 
+                    Nulla in dictum lacus. Nam orci magna, gravida ut vulputate sit amet, ullamcorper nec libero. 
+                    Vestibulum cursus bibendum lectus at eleifend. Praesent sed viverra metus.
+                    Sed erat neque, ultricies vel nibh id, elementum pellentesque nibh. 
+                    Integer egestas enim at elit ultricies, et rutrum sapien consectetur. 
+                    Aenean ornare volutpat mollis. Maecenas ut porta odio, facilisis placerat massa. 
+                    Pellentesque efficitur fermentum eros, nec congue libero sollicitudin sed. 
+                    Aliquam finibus commodo ipsum ac ultrices. Aenean sed neque mauris.
+                </p>
+                <br>
+                <p>
+                    In hac habitasse platea dictumst. 
+                    Donec mattis scelerisque purus sit amet fringilla. 
+                    Duis tempus enim elit, cursus ultricies purus hendrerit vitae. 
+                    Nam tempus in neque sit amet varius. Sed mattis nisl mauris, ut ultricies elit eleifend ac. 
+                    Maecenas iaculis velit ipsum, eu pharetra libero semper at. 
+                    Duis sit amet justo lorem. Donec ultrices nisi a orci mattis venenatis. 
+                    Donec sed massa eu erat tristique pharetra nec id turpis.
+                </p>
+                <br>
+                <p>
+                    Nam commodo ac nulla vel mattis. Donec non mauris vitae mi convallis sodales. 
+                    Praesent nibh lectus, venenatis sed mauris rhoncus, commodo mollis est. 
+                    Nullam libero nibh, tempor at erat eu, iaculis dignissim nibh. 
+                    Vivamus quis urna quam. Suspendisse potenti. 
+                    Quisque mattis massa ac elit gravida auctor. 
+                    Phasellus vulputate orci condimentum purus fringilla pharetra. 
+                    Quisque non metus lorem. Aliquam hendrerit orci et porttitor finibus. 
+                    Maecenas consectetur suscipit neque. Sed fermentum ante turpis, a imperdiet augue suscipit ac. 
+                    Ut eget nibh faucibus, lacinia sem in, bibendum sem. Morbi nunc orci, venenatis ultrices diam sed, porta fringilla lorem. 
+                    Ut et efficitur mi.
+                </p>
+            </div>
+        </main>
+
+        <footer>
+            <h2> Hello Footer!</h2>
+        </footer>
+    
+        <script>
+            // BACKGROUND COLOR CHANGER 
+
+            var colorIndices = [0, 1, 2, 3, 4, 5];
+            var currentColorIndex = 0;
+    
+            function initializePage() {
+                setIndexBackgroundColor();
+                console.log("Initial index:", currentColorIndex);
+            }
+    
+            function setIndexBackgroundColor() {
+                var colors = ["crimson", "tomato", "gold", "ForestGreen", "SteelBlue", "DarkOrchid"];
+                document.body.style.backgroundColor = colors[colorIndices[currentColorIndex]];
+            }
+    
+            function backgroundColor() {
+                currentColorIndex = (currentColorIndex + 1) % colorIndices.length;
+                setIndexBackgroundColor();
+                console.log("Forward index:", currentColorIndex);
+            }
+    
+            function reverseBackgroundColor() {
+                currentColorIndex = (currentColorIndex - 1 + colorIndices.length) % colorIndices.length;
+                setIndexBackgroundColor();
+                console.log("Reverse index:", currentColorIndex);
+            }
+
+            // H1 TEXT Fade In and Out 
+
+            var languageIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29];
+            var currentLanguageIndex = 0;
+
+            function initializePage() {
+                updateHelloWorld();
+                setInterval(scrollHelloWorld, 2000);
+                console.log("Hello World! Initial Index:", currentLanguageIndex);
+            }
+
+            function updateHelloWorld() {
+                var languages = [
+                    'Hello World!',
+                    'Hola Mundo',
+                    'Bonjour le Monde',
+                    'Hallo Welt',
+                    'Ciao Mondo',
+                    'Olá Mundo',
+                    'Hallo Wereld',
+                    'Привет, мир!',
+                    '你好，世界！',
+                    'こんにちは、世界！',
+                    '안녕하세요, 세계!',
+                    'مرحبًا بالعالم!',
+                    'שלום עולם!',
+                    'Merhaba Dünya!',
+                    'Hej världen!',
+                    'Hei maailma!',
+                    'Γεια σου, κόσμε!',
+                    'नमस्ते दुनिया!',
+                    'Chào thế giới!',
+                    'สวัสดี, โลก!',
+                    'Witaj świecie!',
+                    'Ahoj světe!',
+                    'Helló Világ!',
+                    'Salut lume!',
+                    'Здравей, свят!',
+                    'Halo Dunia!',
+                    'Hello Dunia!',
+                    'Hujambo Dunia!',
+                    'Kumusta Mundo!',
+                    'Saluton Mondo!'
+                ];
+
+                document.getElementById('helloWorldText').textContent = languages[languageIndices[currentLanguageIndex]];
+            }
+
+            function scrollHelloWorld() {
+                /*currentLanguageIndex = (currentLanguageIndex + 1) % languageIndices.length;
+                fadeInOutHelloWorld();
+                updateHelloWorld();*/
+                
+
+                if (currentLanguageIndex === 0) {
+                    fadeInOutHelloWorld();
+                    //console.log("Function Triggered");
+                }
+
+                currentLanguageIndex = (currentLanguageIndex + 1) % languageIndices.length;
+                fadeInOutHelloWorld();
+                updateHelloWorld();
+
+                //console.log("Hello World! Curent Index:", currentLanguageIndex);
+
+            }
+
+            function fadeInOutHelloWorld() {
+                var h1Element = document.getElementById('helloWorldText');
+                var opacity = 0;
+
+                setInterval(() => {
+                    h1Element.style.opacity = opacity;
+                    opacity = 1 - opacity; // Toggle between 0 and 1
+                }, 1000);
+            }
+
+
+
+    
+            window.onload = initializePage;
+
+        </script>
+
+    </body>
+
+
+</html>

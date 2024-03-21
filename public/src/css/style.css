@@ -8,7 +8,14 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: crimson;
     transition: background-color 0.5s ease;
-    background-image: repeating-radial-gradient(black, transparent 1133px);
+    /*background-image: repeating-radial-gradient(black, transparent 1133px);*/
+
+}
+
+.bodyFlex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 header {
@@ -48,11 +55,15 @@ main p {
 }
 
 .titleCtn {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 10px;
     max-width: 80%;
     min-width: 40%;
     text-align: center;
+    background-color: black;
+    border-radius: 25px;
 }
 
 .titleCtn h3 {
@@ -60,13 +71,20 @@ main p {
     text-shadow: 2px 2px 5px black;
 }
 
-
+.switchCtn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 
 .page {
     display: flex;
     flex-direction: column;
     max-width: 80%;
     min-width: 40%; 
+    background-color: black ;
+    border-radius: 25px;
+    padding: 25px;
 }
 
 .page p {

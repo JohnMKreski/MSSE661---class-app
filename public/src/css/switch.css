@@ -3,6 +3,9 @@
     background-repeat: repeat-x;
     background-size: 50%;
     background-position: center;
+    /*    
+    background-image: repeating-conic-gradient(crimson 0% , tomato 16.67%, yellow 33.33%, green 50%, blue 66.67%, purple 83.33%, crimson 100%);
+    */
 }
 
 .switch {

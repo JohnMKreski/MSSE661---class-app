@@ -6,6 +6,7 @@
 
         <link rel="stylesheet" href="src/css/style.css" />
         <link rel="stylesheet" href="src/css/switch.css" />
+        <link rel="stylesheet" href="src/css/backgroundSpin.css" />
 
         <title>JMK Class App</title>
     </head>
@@ -15,22 +16,56 @@
         <header>
             <div class="headCtn">
                 <h1 id="helloWorldText">
-
                 </h1>
             </div>
-            
+
+            <div class="slidecontainer">
+                <input type="range" min="1" max="30" value="1" class="headSlider" id="myRange">
+                <p>Value: <span id="demo"></span></p>
+            </div>
         </header>
 
         <main>
             <div class="titleCtn">
-                <h3>
+                <!--<h3>
                     <button onclick = "reverseBackgroundColor()"> Previous </button>
                     ::BACKGROUND COLOR::
                     <a href="#" onclick = "backgroundColor()"> Next</a>
-                </h3>
+                </h3>-->
+                <form class="login" action="">
+                    <div class="loginCtn">
+                        <label for="uname">
+                            <b>
+                                Username:
+                            </b>    
+                        <input id="uname" type="text" placeholder="Enter Username" required/>
+                        </label>
+
+                        <label for="psw">
+                            <b>
+                                Password:
+                            </b>
+                        <input id="psw" type="password" placeholder="Enter Password" required/>
+                        </label>
+                    </div>
+
+                    <div class = "loginBtn">
+                        <label>
+                            <input type="checkbox" checked="checked" name="remember"> Remember me
+                        </label>
+
+                        <button type="submit">Login</button>
+                    </div>
+
+                    <div class="cancelCtn">
+                        <button type="button" class="cancelBtn">Cancel</button>
+                        <button type="button" class="pswBtn">Forgot Password</button>
+                    </div>
+                </form>
+
                 <div class="switchCtn">
                     <h3>
-                        Switch On Music:
+                        Party Button ->
                     </h3>
                     
                     <audio id="audioElement" src="src/audio/120_Gmin_WebsiteSong.wav">
@@ -115,7 +150,7 @@
         <script>
             // BACKGROUND COLOR CHANGER 
 
-            var colorIndices = [0, 1, 2, 3, 4, 5];
+            /*var colorIndices = [0, 1, 2, 3, 4, 5];
             var currentColorIndex = 0;
             var intervalId;
     
@@ -143,16 +178,17 @@
 
             function toggleInterval() {
                 if (intervalId) {
-                    clearInterval(intervalId); // Stop the interval if it's running
+                    clearInterval(intervalId); 
                     intervalId = null;
                     console.log("Background is Stopped.");
                 } else {
-                    intervalId = setInterval(backgroundColor, 2000); // Start the interval
+                    intervalId = setInterval(backgroundColor, 2000); 
                     console.log("Background is Changing.");
 
                     setTimeout(() => {
-                        clearInterval(intervalId); // Stop the interval
+                        clearInterval(intervalId); 
                         intervalId = null;
+                        //setIndexBackgroundColor(currentColorIndex);
                         console.log("Background animation timeout reached.");
                     }, 64000);
                 }
@@ -165,7 +201,21 @@
             document.getElementById("toggleAnimation").addEventListener("change", toggleAnimation);
 
 
-            
+            */
+           //Header Slider 
+           
+            var slider = document.getElementById("myRange");
+            var output = document.getElementById("demo");
+            output.innerHTML = slider.value; // Display the default slider value
+
+            // Update the current slider value (each time you drag the slider handle)
+            slider.oninput = function() {
+                output.innerHTML = this.value;
+                // Adjust language indices based on the slider value
+                currentLanguageIndex = Math.floor((languageIndices.length) * (this.value / 100));
+                updateHelloWorld();
+            }
+
 
             // H1 TEXT Fade In and Out 
 
@@ -173,11 +223,11 @@
             var currentLanguageIndex = 0;
 
 
-            function initializePage() {
+            /*function initializePage() {
                 updateHelloWorld();
                 setInterval(scrollHelloWorld, 2000);
                 //console.log("Hello World! Initial Index:", currentLanguageIndex, "of", languageIndices.length);
-            }
+            }*/
 
             function updateHelloWorld() {
                 var languages = [
@@ -216,7 +266,7 @@
                 document.getElementById('helloWorldText').textContent = languages[languageIndices[currentLanguageIndex]];
             }
 
-            function scrollHelloWorld() {
+            /*function scrollHelloWorld() {
                 currentLanguageIndex = (currentLanguageIndex + 1) % languageIndices.length;
                 fadeInOutHelloWorld();
                 updateHelloWorld();
@@ -229,9 +279,9 @@
                 
                 //console.log("Hello World! Current Index:", currentLanguageIndex, "of", languageIndices.length);
                 
-            }
+            //}
 
-            function fadeInOutHelloWorld() {
+            /*function fadeInOutHelloWorld() {
                 var h1Element = document.getElementById('helloWorldText');
                 var opacity = 0;
 
@@ -244,7 +294,7 @@
 
 
     
-            window.onload = initializePage;
+            window.onload = initializePage;*/
 
         </script>
     </div>

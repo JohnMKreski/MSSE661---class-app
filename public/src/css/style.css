@@ -6,10 +6,11 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: crimson;
+    /*background-color: crimson;*/
     transition: background-color 0.5s ease;
-    /*background-image: repeating-radial-gradient(black, transparent 1133px);*/
-
+    /*background-image: repeating-radial-gradient(black, transparent 1133px);*/  
+    background-image: repeating-conic-gradient(crimson 0% , tomato 16.67%, yellow 33.33%, green 50%, blue 66.67%, purple 83.33%, crimson 100%);
+    
 }
 
 .bodyFlex {
@@ -21,6 +22,8 @@ body {
 header {
     position: relative;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 50%;
     justify-content: center;
     border-radius: 25px;
@@ -31,6 +34,96 @@ header {
     background-image: linear-gradient(63deg, #00000094, transparent);
     box-shadow: -11px 8px 20px 0px;
     margin: 10px;
+}
+
+.headCtn {
+    height: 70px;
+    margin: 25px;
+}
+
+.slidecontainer {
+    display: flex;
+    flex-direction: column;
+    width: 50%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.headSlider {
+-webkit-appearance: none;  /* Override default CSS styles */
+appearance: none;
+width: 100%; /* Full-width */
+height: 25px; /* Specified height */
+background: #d3d3d3; /* Grey background */
+outline: none; /* Remove outline */
+opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+-webkit-transition: .2s; /* 0.2 seconds transition on hover */
+transition: opacity .2s;
+border-radius: 25px;
+}
+
+/* Mouse-over effects */
+.headSlider:hover {
+opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.headSlider::-webkit-slider-thumb {
+-webkit-appearance: none; /* Override default look */
+appearance: none;
+width: 15px; /* Set a specific slider handle width */
+height: 25px; /* Slider handle height */
+background: #04AA6D; /* Green background */
+cursor: pointer; /* Cursor on hover */
+border-top-left-radius: 75%;
+border-top-right-radius: 75%;
+}
+
+.headSlider::-moz-range-thumb {
+width: 25px; /* Set a specific slider handle width */
+height: 25px; /* Slider handle height */
+background: #04AA6D; /* Green background */
+cursor: pointer; /* Cursor on hover */
+}
+
+
+.login {
+    display: block;
+    background: blanchedalmond;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 15px;
+    
+}
+
+.loginCtn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 5px;
+}
+
+.loginBtn {
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.cancelCtn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5px;
+    align-items: flex-end;
+}
+
+.cancelBtn {
+    margin: 5px;
+}
+
+.pswBtn {
+    margin: 5px;
 }
 
 
@@ -92,9 +185,7 @@ main p {
     text-shadow: 2px 2px 5px black;
 }
 
-.headCtn {
-    height: 70px;
-}
+
 
 
 h1 {
@@ -103,7 +194,7 @@ h1 {
     white-space: nowrap; 
     overflow: hidden; 
     opacity: 1;
-    transition: opacity 1s ease; /* SHORTHAND TRANSISTION*/
+    /*transition: opacity 1s ease; /* SHORTHAND TRANSISTION*/
 
 }
 

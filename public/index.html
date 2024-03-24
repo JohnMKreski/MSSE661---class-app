@@ -4,6 +4,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
 
+        <link rel="stylesheet" href="src/css/reset.css" />
         <link rel="stylesheet" href="src/css/style.css" />
         <link rel="stylesheet" href="src/css/switch.css" />
         <link rel="stylesheet" href="src/css/backgroundSpin.css" />
@@ -11,17 +12,18 @@
         <title>JMK Class App</title>
     </head>
 
-    <body>
+    <body class = "rainbowIMG" id="rainbowElement">
     <div class="backgroundIMG bodyFlex" id="backgroundElement">
         <header>
             <div class="headCtn">
                 <h1 id="helloWorldText">
+                    Hello World!
                 </h1>
             </div>
 
             <div class="slidecontainer">
-                <input type="range" min="1" max="30" value="1" class="headSlider" id="myRange">
-                <p>Value: <span id="demo"></span></p>
+                <input type="range" min="0" max="9" value="0" class="headSlider" id="myRange">
+                <p>Language: <span id="demo"></span></p>
             </div>
         </header>
 
@@ -206,64 +208,55 @@
            
             var slider = document.getElementById("myRange");
             var output = document.getElementById("demo");
-            output.innerHTML = slider.value; // Display the default slider value
+            var languages = [
+                'English',
+                'Spanish',
+                'Chinese',
+                'Arabic',
+                'French',
+                'Russian',
+                'Japanese',
+                'German',
+                'Portuguese',
+                'Hindi'
+            ]
+            output.innerHTML = languages[slider.value]; // Display the default slider value
 
             // Update the current slider value (each time you drag the slider handle)
             slider.oninput = function() {
-                output.innerHTML = this.value;
+                output.innerHTML = languages[this.value];
                 // Adjust language indices based on the slider value
-                currentLanguageIndex = Math.floor((languageIndices.length) * (this.value / 100));
+                currentLanguageIndex = Math.floor((languageIndices.length) * (this.value / 10));
                 updateHelloWorld();
             }
 
 
             // H1 TEXT Fade In and Out 
 
-            var languageIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29];
-            var currentLanguageIndex = 0;
+            var languageIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 
-            /*function initializePage() {
+            function initializePage() {
                 updateHelloWorld();
-                setInterval(scrollHelloWorld, 2000);
+                //setInterval(scrollHelloWorld, 2000);
                 //console.log("Hello World! Initial Index:", currentLanguageIndex, "of", languageIndices.length);
-            }*/
+            }
 
             function updateHelloWorld() {
-                var languages = [
+                var helloLanguages = [
                     'Hello World!',
-                    'Hola Mundo',
-                    'Bonjour le Monde',
-                    'Hallo Welt',
-                    'Ciao Mondo',
-                    'Olá Mundo',
-                    'Hallo Wereld',
-                    'Привет, мир!',
-                    '你好，世界！',
-                    'こんにちは、世界！',
-                    '안녕하세요, 세계!',
-                    'مرحبًا بالعالم!',
-                    'שלום עולם!',
-                    'Merhaba Dünya!',
-                    'Hej världen!',
-                    'Hei maailma!',
-                    'Γεια σου, κόσμε!',
-                    'नमस्ते दुनिया!',
-                    'Chào thế giới!',
-                    'สวัสดี, โลก!',
-                    'Witaj świecie!',
-                    'Ahoj světe!',
-                    'Helló Világ!',
-                    'Salut lume!',
-                    'Здравей, свят!',
-                    'Halo Dunia!',
-                    'Hello Dunia!',
-                    'Hujambo Dunia!',
-                    'Kumusta Mundo!',
-                    'Saluton Mondo!'
+                    '¡Hola Mundo!',
+                    '你好，世界！ (Nǐ hǎo, shìjiè!) ',
+                    'مرحبا بالعالم! (Marhabaan bialealam!)',
+                    'Bonjour le Monde!',
+                    'Привет, мир! (Privet, mir!)',
+                    'こんにちは、世界！ (Konnichiwa, sekai!)',
+                    'Hallo Welt!',
+                    'Olá Mundo!',
+                    'नमस्ते दुनिया! (Namaste duniya!)'
                 ];
 
-                document.getElementById('helloWorldText').textContent = languages[languageIndices[currentLanguageIndex]];
+                document.getElementById('helloWorldText').textContent = helloLanguages[languageIndices[currentLanguageIndex]];
             }
 
             /*function scrollHelloWorld() {

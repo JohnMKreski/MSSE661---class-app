@@ -1,0 +1,14 @@
+{
+  "name": "week3",
+  "version": "1.0.0",
+  "description": "Week 3 - node.js/npm/mysql/api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

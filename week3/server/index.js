@@ -26,3 +26,15 @@ app.listen(3000, function() { //(portnumber, callback()) //at port 3000, exectut
 }); 
 
 /*             ---             */
+
+
+/**
+ * TO Start Server
+ * CMD line 
+ * - cd
+ * - node server/index.js
+ * 
+ * To quit server
+ * CMD Line 
+ * - "ctrl" C
+ */

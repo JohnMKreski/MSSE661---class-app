@@ -1,0 +1,15 @@
+{
+  "name": "week3",
+  "version": "1.0.0",
+  "description": "Week 3 - node.js/npm/mysql/api",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./server"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "nodemon": "^3.1.0"
+  }
+}

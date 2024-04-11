@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+
+        <link rel="stylesheet" href="./src/css/reset.css" />
+        <link rel="stylesheet" href="./src/css/style.css" />
+        <link rel="stylesheet" href="./src/css/backgroundSpin.css" />
+
+        <title>Contact</title>
+        <link rel="icon" type="image/x-icon" href="./src/media/favicon/college.ico">
+    </head>
+
+    <body class = "rainbowIMG" id="rainbowElement">
+    
+        <header id="header">
+            <div class="headCtn" onclick="doMenu(event)">
+                <h1 id="helloWorldText" class="headerTitle">
+                    Menu
+                </h1>
+                <i id="menuIcon" class="arrow right" ></i>
+            </div>
+        </header>
+
+
+        <div class="flexSubMenu">
+            <div class="subMenuCtn">
+                <ul>
+                    <li>
+                        <a href="home.html" class="flexLink"> 
+                            <h4 class="flexTitle">Home</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flexLink"> 
+                            <h4 class="flexTitle">About</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contact.html" class="flexLink"> 
+                            <h4 class="flexTitle">Contact</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="logout" href="logout.html" class="flexLink"> 
+                            <h4 class="flexTitle">Logout</h4>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="backgroundIMG bodyFlex" id="backgroundElement">
+        <main>
+            <div class="titleCtn">
+                <div class="title">
+                    <h3>
+                        Contact Page
+                    </h3>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="./src/js/api.config.js"></script>
+    <script src="./src/js/simple-storage.js"></script>
+    <script src="./src/js/service-helpers.js"></script>
+    <script src="./src/js/auth.service.js"></script>
+    <script src="./src/js/route-guard.js"></script>
+    <script src="./src/js/app.js"></script>
+    <script src="./src/js/menu.js"></script>
+    <!--<script src="./src/js/switch.js"></script>-->
+    </body>
+
+
+</html>

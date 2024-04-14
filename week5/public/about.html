@@ -8,11 +8,17 @@
         <link rel="stylesheet" href="./src/css/style.css" />
         <link rel="stylesheet" href="./src/css/backgroundSpin.css" />
 
+        <!-- Google Font https://fonts.google.com/ -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+
+
         <title>About</title>
         <link rel="icon" type="image/x-icon" href="./src/media/favicon/college.ico">
     </head>
 
-    <body class = "rainbowIMG" id="rainbowElement">
+    <body class = "rainbowIMG orbitron-font" id="rainbowElement">
     
         <header id="header">
             <div class="headCtn" onclick="doMenu(event)">
@@ -59,13 +65,20 @@
                     </h3>
                 </div>
             </div>
+            <div class="page indie-flower-regular">
+                <div id="user">
+                  <div>Loading...</div>
+                </div>
+            </div>
         </main>
     </div>
     <script src="./src/js/api.config.js"></script>
     <script src="./src/js/simple-storage.js"></script>
     <script src="./src/js/service-helpers.js"></script>
     <script src="./src/js/auth.service.js"></script>
+    <script src="./src/js/user.service.js"></script>
     <script src="./src/js/route-guard.js"></script>
+    <script src="./src/js/build-user-info.js"></script>
     <script src="./src/js/app.js"></script>
     <script src="./src/js/menu.js"></script>
     <!--<script src="./src/js/switch.js"></script>-->

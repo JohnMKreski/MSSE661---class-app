@@ -32,7 +32,7 @@
       // header row
       const headerRow = document.createElement('thead');
       headerRow.className = 'song-headers';
-      ['Checkbox', 'ID', 'Artist', 'Song Title', 'Status', 'Date'].forEach(headerText => {
+      ['ID', 'Artist', 'Song Title', 'Status', 'Date'].forEach(headerText => {
           const th = document.createElement('th');
           th.innerText = headerText;
           headerRow.appendChild(th);
@@ -41,22 +41,23 @@
   
       // Created rows for each song using map()
       songs.map(song => {
-          const tr = document.createElement('tr');
-          const checkboxTd = document.createElement('td');
-          const checkbox = document.createElement('input');
-          checkbox.setAttribute('type', 'checkbox');
-          checkboxTd.appendChild(checkbox);
-          tr.appendChild(checkboxTd);
+          const tableRow = document.createElement('tr');
+          tableRow.className = 'table-rows';
+        //   const checkboxTd = document.createElement('td');
+        //   const checkbox = document.createElement('input');
+        //   checkbox.setAttribute('type', 'checkbox');
+        //   checkboxTd.appendChild(checkbox);
+        //   tr.appendChild(checkboxTd);
 
           // data table in array
           ['id', 'artist_name', 'song_title', 'status', 'created_date'].forEach(item => {
               const td = document.createElement('td');
               td.innerText = song[item];
-              tr.appendChild(td);
+              tableRow.appendChild(td);
           });
   
           // Append row to table
-          table.appendChild(tr);
+          table.appendChild(tableRow);
       });
   }
 })();

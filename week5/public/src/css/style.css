@@ -2,7 +2,7 @@ body {
     min-height: 100vh;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* font-family: 'Courier New', Tahoma, Geneva, Verdana, monospace; font-family in reset.css*/
     /*background-color: crimson;*/
     transition: background-color 0.5s ease;
     /*background-image: repeating-radial-gradient(black, transparent 1133px);*/  
@@ -367,14 +367,45 @@ main p {
 
 
 .page {
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     max-width: 80%;
     min-width: 40%; 
-    background-color: black ;
+    background-color: rgba(0, 0, 0, 0.288) ;
     border-radius: 25px;
     padding: 25px;
+    color: aliceblue;
 }
+
+.page ul {
+    padding-left: 50px;
+}
+
+.index-list {
+    display: block;
+    text-align: justify;
+}
+
+.index-list li {
+    float: none;
+    margin: 20px;
+    font-size: medium;
+}
+
+.index-list .li-header {
+    list-style: cambodian;
+    text-transform: uppercase;
+    font-size: larger;
+
+}
+
+.index-list ul {
+    list-style: circle;
+}
+
+.index-list li::marker {
+    color: red;
+  }
 
 .page p {
     color: aliceblue;

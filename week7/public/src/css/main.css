@@ -1,0 +1,110 @@
+main > .Ctnr {
+    padding: 60px 15px 60px;
+  }
+  
+  .footer {
+    background-color: #f5f5f5;
+  }
+  
+  .footer > .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  
+  code {
+    font-size: 80%;
+  }
+
+header {
+  padding: 20px;
+}
+
+.crowdGoWild {
+  background-image: url('../media/images/crowdGoWild.jpg') ;
+  background-size: cover;
+
+}
+
+.noMusic {
+  background-image: url('../media/images/noMusic.jpg') ;
+  background-size: cover;
+  background-position: center;
+
+}
+
+.records {
+  background-image: url('../media/images/records.jpg') ;
+  background-size: cover;
+}
+
+.scratch {
+  background-image: url('../media/images/scratch.jpg') ;
+  background-size: cover;
+}
+
+main {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.438);
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+ul, li {
+  color: black;
+}
+
+.card {
+  background-color: #607D8B;
+  width: 50%;
+  align-items: center;
+
+}
+
+.card-split {
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+  padding: 20px;
+}
+
+.card-title,
+.form-group-btn {
+  padding-left: 1.25rem;
+}
+
+.right-border {
+  border-right: 1px solid grey;
+  padding-right: 50px;
+}
+
+.left-border {
+  padding-left: 50px;
+}
+
+.table {
+  color: white;
+}
+
+thead {
+  width: 100%;
+}
+
+footer {
+  position: relative;
+}
+
+li {
+  display: none;
+}
+
+.modal {
+  background-color: #0000007d;
+}
+
+.modal-content {
+  background-color: black;
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+
+        <link rel="stylesheet" href="../../scss/_reboot.scss" />
+        <link rel="stylesheet" href="../../css/bootstrap.css" />
+        <!-- <link rel="stylesheet" href="./src/css/bootstrap-grid.css" /> -->
+        <link rel="stylesheet" href="../../css/main.css" />
+        <link rel="stylesheet" href="../../css/style.css" />
+
+        <link rel="icon" type="image/x-icon" href="../../media/favicon/college.ico">
+        <title> WEEK 8 - Admin Dashboard </title>
+    </head>
+
+    <body class="d-flex flex-column h-100 scratch">
+    
+        <header class="mb-auto">
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+              <a class="navbar-brand" href="#"></a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto">
+                    <li id="admin_userItem" class="nav-item ">
+                        <a class="nav-link" href="./admin-dashboard.html">Admin Dashboard <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li id="admin_globalItem" class="nav-item active">
+                        <a class="nav-link " href="./admin-global-list.html">Admin Global Song List </a>
+                    </li>
+                    <!-- <li id="requestItem" class="nav-item">
+                        <a class="nav-link " href="./src/lib/song_req/add-song_req.html">Request Song </a>
+                    </li> -->
+                    <li id="admin_loginItem" class="nav-item">
+                        <a id="admin_loginLink" class="nav-link" href="../../../login.html">Sign In</a>
+                    </li>
+                    <li id="admin_logoutItem" class="nav-item">
+                        <a id="admin_logoutLink" href="#" class="nav-link" onclick="doLogout(event)">Logout</a>
+                    </li>
+                    </ul>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li> -->
+                    </ul>
+                    <!-- <form class="form-inline mt-2 mt-md-0">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form> -->
+                </div>
+            </nav>
+        </header>
+
+        <main class="flex-shrink-0">
+            <div class="Ctnr">
+                <h1 class="display-4">Admin's Song Request's Table</h1>
+
+                <!-- Button to trigger modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#songRequestModal" onclick="checkAuthenticationBeforeModal()">
+                    Request a Song
+                </button>
+                
+                <!-- Modal -->
+                <div class="modal fade" id="songRequestModal" tabindex="-1" aria-labelledby="songRequestModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="songRequestModalLabel">Request a Song</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                        <div class="modal-body">
+                        <form id="songRequestForm">
+                            <div class="form-group">
+                            <label for="songTitle">Song Title</label>
+                            <input type="text" class="form-control" id="songTitle" required>
+                            </div>
+                            <div class="form-group">
+                            <label for="artistName">Artist Name</label>
+                            <input type="text" class="form-control" id="artistName" required>
+                            </div>
+                            <!-- Add more form fields if needed -->
+                            <button type="submit" class="btn btn-primary" onclick="doAddSong(event)" >Submit</button>
+                        </form>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+  
+  
+
+                <div class="content">
+                        <table class="table">
+                            <thead>
+                                <th>
+                                    User ID
+                                </th>
+                                <th>
+                                    Song ID
+                                </th>
+                                <th>
+                                    Artist
+                                </th>
+                                <th>
+                                    Song Title
+                                </th>
+                                <th>
+                                    Status
+                                </th>
+                                <th>
+                                    Date
+                                </th>
+                            </thead>
+                            <tbody id="all-songs">
+                                <tr id="loading-row">
+                                    <td colspan="6">Loading...</td>
+                                </tr>
+                            </tbody>                       
+                        </table>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer mt-auto py-3 bg-dark">
+            <div class="container">
+                <span class="text-muted">MSSE 661 - Class App - John Michael Kreski</span>
+            </div>
+        </footer>
+
+
+    <script src="../API/api.config.js"></script>
+    <script src="../API/simple-storage.js"></script>
+    <script src="../API/service-helpers.js"></script>
+    <script src="../API/auth.service.js"></script>
+    <script src="../API/auth.js"></script>
+    <script src="../API/auth.guard.js"></script>
+    <script src="../API/song_req.auth.guard.js"></script>
+
+    <script src="../song_req/song_req-api.service.js"></script>
+
+    <script src="../song_req/song_req.service.js"></script>
+    <script src="../song_req/song_req.js"></script>
+
+    <!-- <script src="./admin-song_req-api.service.js"></script>
+    <script src="./admin-song_req.service.js"></script>
+    <script src="./admin-song_req.js"></script> -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../UI/bootstrap.js"></script>
+    
+    <script src="../../../app.js"></script>
+    
+
+    </body>
+
+</html>
